@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
   );
 
   const login = async (username, password) => {
-    const res = await axios.post('http://127.0.0.1:8000/api/token/', { 
+    const res = await axios.post('https://blog-fullstack-eiwm.onrender.com/api/token/',  { 
       username, 
       password 
     }, {
