@@ -12,11 +12,10 @@ export default function Dashboard() {
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
-  useEffect(() => {
+ useEffect(() => {
     if (!user) { navigate('/login'); return; }
     fetchPosts();
-  }, [user]);
-
+  }, [user, navigate]);
   const fetchPosts = () => {
     api.get('posts/').then(res => setPosts(res.data));
   };

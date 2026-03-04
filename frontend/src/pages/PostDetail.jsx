@@ -8,11 +8,11 @@ export default function PostDetail() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
+useEffect(() => {
     api.get(`posts/${id}/`)
       .then(res => { setPost(res.data); setLoading(false); })
       .catch(() => { navigate('/'); });
-  }, [id]);
+  }, [id, navigate]);
 
   if (loading) return <div style={styles.loading}>Chargement...</div>;
 
